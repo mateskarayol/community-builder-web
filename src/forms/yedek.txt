@@ -1,0 +1,26 @@
+React.Component is an abstract base class. You will typically subclass it and define at least a render() method.
+constructor(props)
+Do call super(props) before any statement.
+Here is the right place to initialize state by using this.state.
+Here is the right place to bind event handlers to the class instance.
+If you don’t initialize a state and you don’t bind methods, you don’t need to implement the constructor.
+Don’t: Avoid introducing any side-effects or subscriptions. Do not set state by using setState() in the constructor.
+componentDidMount()
+This is invoked immediately after a component is mounted.
+Here is the right place for initialization that requires DOM nodes.
+Here is the right place if you need to load data from a remote endpoint (where to instantiate the network request).
+Here is the right place to set up any subscriptions (don’t forget to unsubscribe in componentWillUnmount())
+Here is where you interact with the browser.
+render()
+This method is required.
+It examines this.props and this.state and returns one of the following: React elements, Strings and numbers, Portals, null or Booleans.
+This method should be pure and should NOT modify component state. It should return the same result each time it’s invoked and it does not directly interact with the browser.
+
+
+<Link to= {`/communityHomePage/:${JSON.stringify(communityList[idx])}`} >Show</Link>
+                            <Link to= {{ pathname: '/communityHomePage', state: { community: communityList[idx]} }} >Show</Link>
+                            <Link to={`communityHomePage/${communityList[idx]}`} >Show</Link>
+                            
+
+                                        <Button onClick={this.listCommunitiesHandler} color="secondary">List Communities</Button>  
+                            <Button onClick={showHandler} data-community={JSON.stringify(communityList[idx])} >show</Button>
